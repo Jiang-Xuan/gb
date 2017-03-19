@@ -5,6 +5,7 @@
 const child_process = require('child_process')
 const spawn = child_process.spawn
 const note_git_branch_info = require('./src/read_gitbranch').branchs
+const colors = require('colors')
 
 let git_branch = spawn('git', ['branch'])
 let output = ''
@@ -20,7 +21,7 @@ new Promise((resolve, reject) => {
   while(result.length > 0) {
     let arr = result.match(native_branch)
     result = result.substring(arr[0].length)
-    output += `${arr[0]}${note_git_branch_info[arr[1]] ? ' - ' + note_git_branch_info[arr[1]] : ''}`
+    output += `${arr[0]}${note_git_branch_info[arr[1]] ? ' - ' + note_git_branch_info[arr[1]].bold : ''}`
   }
 
   console.log(output)
