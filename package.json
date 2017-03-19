@@ -1,6 +1,6 @@
 {
   "name": "branchinfo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "给git分支加注释,来清晰的记录git分支的作用",
   "main": "index.js",
   "scripts": {

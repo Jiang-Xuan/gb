@@ -12,7 +12,7 @@ try {
 git_branch.replace(/\r\n|\n/g, '\n')
 
 let branchs = {}
-let branch = /^(.*) (.*)(?=\n|$)\n*/
+let branch = /^([^ ]*) (.*)(?=\n|$)\n*/
 
 while(git_branch.length > 0) {
   let g = git_branch.match(branch)

@@ -21,7 +21,11 @@ new Promise((resolve, reject) => {
   while(result.length > 0) {
     let arr = result.match(native_branch)
     result = result.substring(arr[0].length)
-    output += `${arr[0]}${note_git_branch_info[arr[1]] ? ' - ' + note_git_branch_info[arr[1]].bold : ''}`
+    if(~arr[0].indexOf('*')) {
+      output += `\n* ${arr[1].green}${note_git_branch_info[arr[1]] ? ' - ' + note_git_branch_info[arr[1]].bold.underline : ''}`
+    } else {
+      output += `${arr[0]}${note_git_branch_info[arr[1]] ? ' - ' + note_git_branch_info[arr[1]].bold : ''}`
+    }
   }
 
   console.log(output)
