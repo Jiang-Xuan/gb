@@ -24,18 +24,18 @@ npm install branchinfo -g
 
 打开你的项目根目录,添加一个新文件`.gitbranch`,键入以下内容:
 
-  master 主分支
-  0.0.1 为项目添加README文件
-  0.0.2 增加一个特别棒的功能,自动写代码
-  0.0.3 自动写JavaScript,放开程序员的手
-  0.0.4 以上都是开玩笑的啦
+    master 主分支
+    0.0.1 为项目添加README文件
+    0.0.2 增加一个特别棒的功能,自动写代码
+    0.0.3 自动写JavaScript,放开程序员的手
+    0.0.4 以上都是开玩笑的啦
 
 为你的项目添加以上分支:
 
-  git branch 0.0.1
-  git branch 0.0.2
-  git branch 0.0.3
-  git branch 0.0.4
+    git branch 0.0.1
+    git branch 0.0.2
+    git branch 0.0.3
+    git branch 0.0.4
 
 这个是用来测试的分支,千万不要用来开发功能哦.
 
