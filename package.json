@@ -1,0 +1,20 @@
+{
+  "name": "gb",
+  "version": "1.0.0",
+  "description": "给git分支加注释,来清晰的记录git分支的作用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiang-Xuan/gb.git"
+  },
+  "keywords": ["git", "branch"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiang-Xuan/gb/issues"
+  },
+  "homepage": "https://github.com/Jiang-Xuan/gb#readme"
+}
