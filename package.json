@@ -1,6 +1,6 @@
 {
-  "name": "gb",
-  "version": "1.0.0",
+  "name": "branchinfo",
+  "version": "1.0.1",
   "description": "给git分支加注释,来清晰的记录git分支的作用",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jiang-Xuan/gb.git"
+  },
+  "bin": {
+    "gb": "index.js"
   },
   "keywords": ["git", "branch"],
   "author": "",
