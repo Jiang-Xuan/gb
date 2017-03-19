@@ -27,7 +27,6 @@ new Promise((resolve, reject) => {
       output += `${arr[0]}${note_git_branch_info[arr[1]] ? ' - ' + note_git_branch_info[arr[1]].bold : ''}`
     }
   }
-
   console.log(output)
 })
 

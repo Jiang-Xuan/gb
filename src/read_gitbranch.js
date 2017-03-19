@@ -1,8 +1,19 @@
 const fs = require('fs')
+const path = require('path')
 
 let git_branch = ''
+
+let currentPath = process.cwd()
+while(currentPath !== '/') {
+  if(fs.existsSync(path.resolve(currentPath, '.gitbranch'))) {
+    break
+  } else {
+    currentPath = path.resolve(currentPath, '../')
+  }
+}
+
 try {
-  git_branch = fs.readFileSync('./.gitbranch').toString()
+  git_branch = fs.readFileSync(path.resolve(currentPath, '.gitbranch')).toString()
 } catch(e) {
   if(e.code === 'ENOENT') {
     console.log('没有找到.gitbranch文件,下面是git分支:')
