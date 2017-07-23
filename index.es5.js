@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-
 'use strict';
 
 var child_process = require('child_process');
@@ -10,6 +9,7 @@ var _require = require('./lib/read_gitbranch.es5'),
 
 var colors = require('colors');
 var spawn = child_process.spawn;
+var Promise = global.Promise || require('bluebird');
 
 var gitBranch = spawn('git', ['branch']);
 var output = '';

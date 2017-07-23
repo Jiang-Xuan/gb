@@ -6,6 +6,7 @@ const child_process = require('child_process')
 const { branchs } = require('./lib/read_gitbranch')
 const colors = require('colors')
 const spawn = child_process.spawn
+const Promise = global.Promise || require('bluebird')
 
 let gitBranch = spawn('git', ['branch'])
 let output = ''
@@ -21,7 +22,7 @@ new Promise((resolve, reject) => {
   })
 })
 .then(result => {
-  
+
   while(result.length > 0) {
     let arr = result.match(nativeBranch)
     result = result.substring(arr[0].length)
