@@ -1,6 +1,7 @@
 # branchinfo
 
-给git分支加注释,解决分支过多无法分辨各个分支的作用的问题
+> Give git branch notes. Because much git branch make me so difficult to understand.
+> 给git分支加注释,解决分支过多无法分辨各个分支的作用的问题
 
 ## Intro
 

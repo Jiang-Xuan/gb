@@ -15,10 +15,11 @@
   },
   "keywords": [
     "git",
-    "branch"
+    "branch",
+    "info"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Jiang-Xuan",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jiang-Xuan/gb/issues"
   },

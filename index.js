@@ -3,30 +3,35 @@
 'use strict'
 
 const child_process = require('child_process')
-const spawn = child_process.spawn
-const note_git_branch_info = require('./src/read_gitbranch').branchs
+const { branchs } = require('./lib/read_gitbranch')
 const colors = require('colors')
+const spawn = child_process.spawn
 
-let git_branch = spawn('git', ['branch'])
+let gitBranch = spawn('git', ['branch'])
 let output = ''
-let native_branch = /^(?:  |\n*\* |\n) {0,2}(.*)(?=\n|$)/
+let nativeBranch = /^(?:  |\n*\* |\n) {0,2}(.*)(?=\n|$)/
 
 new Promise((resolve, reject) => {
-  git_branch.stdout.on('data', (data) => {
-    resolve(data.toString())
+  let branchString = ''
+  gitBranch.stdout.on('data', (data) => {
+    branchString += data.toString()
+  })
+  gitBranch.on('close', () => {
+    resolve(branchString)
   })
 })
 .then(result => {
-
+  
   while(result.length > 0) {
-    let arr = result.match(native_branch)
+    let arr = result.match(nativeBranch)
     result = result.substring(arr[0].length)
     if(~arr[0].indexOf('*')) {
-      output += `\n* ${arr[1].green}${note_git_branch_info[arr[1]] ? ' - ' + note_git_branch_info[arr[1]].bold.underline : ''}`
+      output += `\n* ${arr[1].green}${branchs[arr[1]] ? ' - ' + branchs[arr[1]].bold.underline : ''}`
     } else {
-      output += `${arr[0]}${note_git_branch_info[arr[1]] ? ' - ' + note_git_branch_info[arr[1]].bold : ''}`
+      output += `${arr[0]}${branchs[arr[1]] ? ' - ' + branchs[arr[1]].bold : ''}`
     }
   }
-  console.log(output)
+
+  process.stdout.write(output)
 })
 
